@@ -1,0 +1,2 @@
+# aws-flask
+Educational Project
