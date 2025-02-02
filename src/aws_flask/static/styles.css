@@ -1,0 +1,128 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  background: white;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input {
+  width: 80%;
+  padding: 6px;
+  margin-top: 5px;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #CE84AD;
+  color: white;
+  padding: 10px;
+  margin-top: 15px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+button:hover {
+  background-color: #CE84AD;
+}
+
+#output-container {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+#usersTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #f9f9f9;
+}
+
+#usersTable thead {
+  background: #D1A7A0;
+  color: white;
+}
+
+#usersTable th,
+#usersTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#usersTable tbody tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* General styling for the links */
+a {
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Styling for the back-link */
+.back-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #D2E0BF;
+  /* Green background */
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #c7d7b0;
+}
+
+.info-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #D4CBB3;
+  /* Blue background */
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.info-link:hover {
+  background-color: #e7d5a6;
+}
