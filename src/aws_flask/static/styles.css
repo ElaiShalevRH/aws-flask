@@ -66,20 +66,23 @@ button:hover {
 #usersTable {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
   margin-top: 10px;
   background: #f9f9f9;
+  text-align: center;
 }
 
 #usersTable thead {
   background: #D1A7A0;
   color: white;
+  text-align: center;
 }
 
 #usersTable th,
 #usersTable td {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: left;
+  text-align: center;
 }
 
 #usersTable tbody tr:nth-child(even) {
