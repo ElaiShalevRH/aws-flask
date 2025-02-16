@@ -5,7 +5,7 @@ description = "aws app"
 authors = [
     {name = "Elai Shalev", email = "eshalev@redhat.com"},
 ]
-dependencies = ["flask>=3.1.0", "pytest>=8.3.4", "responses>=0.25.6"]
+dependencies = ["flask>=3.1.0", "ruff>=0.9.6", "bandit>=1.8.2"]
 requires-python = ">=3.12"
 readme = "README.md"
 license = {text = "MIT"}
@@ -20,3 +20,6 @@ distribution = true
 
 [tool.pdm.scripts]
 flask-run = { shell = "flask run", env = { FLASK_APP = "src/aws_flask/server.py", FLASK_ENV = "development" } }
+
+[dependency-groups]
+dev = ["pytest>=8.3.4"]

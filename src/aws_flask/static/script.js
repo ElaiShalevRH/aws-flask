@@ -12,6 +12,7 @@ async function getLatestUser() {
 
 async function clearOutput() {
   document.querySelector("#usersTable tbody").innerHTML = "";
+  return document.querySelector("#usersTable tbody");
 }
 
 /**
@@ -19,8 +20,7 @@ async function clearOutput() {
  * @param {Array} users - List of users to display.
  */
 function updateTable(users) {
-  let tableBody = document.querySelector("#usersTable tbody");
-  tableBody.innerHTML = "";
+  let tableBody = clearOutput();
 
   if (users.length === 0) {
     tableBody.innerHTML = "<tr><td colspan='3'>No users found.</td></tr>";
