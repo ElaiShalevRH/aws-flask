@@ -10,7 +10,8 @@ async function getLatestUser() {
   updateTable([latestUser]);
 }
 
-async function clearOutput() {
+// This needs to be Async so clearOutput() won't return a Promise
+function clearOutput() {
   document.querySelector("#usersTable tbody").innerHTML = "";
   return document.querySelector("#usersTable tbody");
 }

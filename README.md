@@ -3,7 +3,7 @@ This is an toy user management app written in Python and using Flask. The tests 
 
 To run the application:
 ```
-pdm flask run
+pdm flask-run
 ```
 
 To run tests:
