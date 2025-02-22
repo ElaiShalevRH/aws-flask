@@ -43,6 +43,7 @@ function updateTable(users) {
 
 document.getElementById("userForm").addEventListener("submit", async function (event) {
   event.preventDefault();
+  console.log("Form submitted!");  // Debugging step
 
   const name = document.getElementById("name").value;
   const country = document.getElementById("country").value;
@@ -64,12 +65,10 @@ document.getElementById("userForm").addEventListener("submit", async function (e
     });
 
     let data = await response.json();
-    document.getElementById("message").innerText = data.message;
+    getAllUsers();  //HERE
     document.getElementById("userForm").reset();
-    getAllUsers();
-    
+
   } catch (error) {
-    console.error("Error:", error);
-    document.getElementById("message").innerText = "Error adding user.";
+    console.error("Error: could not submit form", error);
   }
 });
