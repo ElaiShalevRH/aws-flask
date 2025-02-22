@@ -11,10 +11,16 @@ new_user = {
 @pytest.fixture
 def client():
     with app.test_client() as client:
-        yield client
+        yield client 
+
+@pytest.fixture
+def setup_db(client):
+    client.get("/api/reset")
+    yield
+    client.get("/api/reset")
 
 
-def test_get_latest_user(client):
+def test_get_latest_user(client, setup_db):
     response = client.get("/api/users?latest=true")
     assert response.status_code == 200
     assert response.json == {
@@ -24,14 +30,14 @@ def test_get_latest_user(client):
     }
 
 
-def test_add_user(client):
+def test_add_user(client, setup_db):
     response = client.post("/api/users", json=new_user)
     assert response.status_code == 200
     assert response.headers["Content-Type"] == "application/json"
     assert response.json == {"response": "New User added successfully."}
 
 
-def test_get_all_users(client):
+def test_get_all_users(client, setup_db):
     response = client.post("/api/users", json=new_user)
     assert response.status_code == 200
     response = client.get("/api/users")
@@ -39,10 +45,9 @@ def test_get_all_users(client):
     assert response.json == [
         {"cat_amount": 3, "country": "Polska", "name": "Marcin"},
         {"cat_amount": 2, "country": "Israel", "name": "Elai"},
-        {"cat_amount": 2, "country": "Israel", "name": "Elai"},
     ]
 
 
-def test_non_existant(client):
+def test_non_existant(client, setup_db):
     response = client.get("/api/non-existent")
     assert response.status_code == 404

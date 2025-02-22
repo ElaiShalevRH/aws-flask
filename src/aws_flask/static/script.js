@@ -37,6 +37,7 @@ function updateTable(users) {
       `;
     tableBody.appendChild(row);
   });
+
 }
 
 
@@ -64,8 +65,9 @@ document.getElementById("userForm").addEventListener("submit", async function (e
 
     let data = await response.json();
     document.getElementById("message").innerText = data.message;
-
     document.getElementById("userForm").reset();
+    getAllUsers();
+    
   } catch (error) {
     console.error("Error:", error);
     document.getElementById("message").innerText = "Error adding user.";

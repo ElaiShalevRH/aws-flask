@@ -36,3 +36,15 @@ def get_user():
 def add_user():
     users.append(request.json)
     return {"response": "New User added successfully."}
+
+@app.route("/api/reset", methods=["GET"])
+def reset_db():
+    users.clear()
+    users.append(
+        {
+        "name": "Marcin",
+        "country": "Polska",
+        "cat_amount": 3,
+        }
+    )
+    return "DB was reset"
