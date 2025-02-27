@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flask App Index</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+  <h1>User Managenet Flask App</h1>
+  <button onclick="getAllUsers()">Get All Users</button>
+  <button onclick="getLatestUser()">Get Latest User</button>
+  <button onclick="clearOutput()">Clear Output</button>
+  <div id="output-container">
+    <table id="usersTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Country</th>
+          <th>Number of Cats &#128049</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <h2> Add a new User </h2>
+  <form id="userForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country" required><br>
+
+    <label for="cat_amount">Number of Cats: &#128049 </label>
+    <input type="number" id="cat_amount" name="cat_amount" required><br>
+
+    <button type="submit">Add User</button>
+  </form>
+
+  <h2> For Additional Data </h2>
+  <a href="{{ url_for('info') }}" class="info-link">Go to Information Page</a>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
